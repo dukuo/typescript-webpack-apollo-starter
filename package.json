@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "rimraf ./build && tsc",
+    "start": "webpack --color && concurrently -r -n \"Webpack,Nodemon\" \"npm run webpack-watch\" \"npm run server-watch\"",
+    "webpack-watch": "webpack --watch --color",
+    "server-watch": "nodemon --watch dist/bundle.js"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.9",
+    "concurrently": "^5.3.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.3",
+    "nodemon": "^2.0.6",
+    "ts-loader": "^8.0.11",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^2.5.2",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "dependencies": {
+    "apollo-server": "^2.19.0",
+    "graphql": "^15.4.0",
+    "graphql-tools": "^7.0.1",
+    "tsconfig-paths": "^3.9.0"
+  }
+}
