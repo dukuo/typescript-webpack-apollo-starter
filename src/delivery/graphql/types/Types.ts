@@ -1,8 +1,8 @@
-import { gql } from "apollo-server-core"
-import { DocumentNode } from "graphql"
+import { gql } from "apollo-server-core";
+import { DocumentNode } from "graphql";
 
 export class GraphqlTypes {
-  constructor() { }
+  constructor() {}
 
   getTypesDefs(): DocumentNode {
     return gql`
@@ -15,9 +15,14 @@ export class GraphqlTypes {
       input HelloWorldInput {
         name: String!
       }
+
       type Query {
         helloWorld(input: HelloWorldInput!): HelloWorldResponse
       }
-            `
+
+      type Subscription {
+        helloWorld: HelloWorldResponse
+      }
+    `;
   }
 }
