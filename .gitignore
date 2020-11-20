@@ -15,3 +15,5 @@ jspm_packages
 .build
 
 .idea
+
+dist
